@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>珠海零边界集成电路有限公司 | GREE 子公司介绍</title>
+  <meta
+    name="description"
+    content="珠海零边界集成电路有限公司 landing page，介绍公司概况、核心产品、产品优势、荣誉资质、发展历程与联系方式。"
+  >
+  <script>
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
+
+    window.addEventListener("pageshow", function () {
+      if (!window.location.hash) {
+        window.scrollTo(0, 0);
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      var items = document.querySelectorAll(".reveal");
+      if (!items.length) {
+        return;
+      }
+
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        items.forEach(function (item) {
+          item.classList.add("is-visible");
+        });
+        return;
+      }
+
+      var observer = new IntersectionObserver(function (entries, obs) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            obs.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.18,
+        rootMargin: "0px 0px -8% 0px"
+      });
+
+      items.forEach(function (item) {
+        observer.observe(item);
+      });
+    });
+  </script>
+  <link rel="stylesheet" href="edgeless.css">
+</head>
+<body>
+  <div class="edgeless-page">
+    <header class="sub-header">
+      <div class="wrap sub-header-inner">
+        <a class="sub-logo" href="#top" aria-label="返回页面顶部">
+          <img src="tosot.png" alt="GREE">
+        </a>
+        <nav class="sub-nav" aria-label="页面导航">
+          <a href="#intro">公司介绍</a>
+          <a href="#products">核心产品</a>
+          <a href="#advantages">产品优势</a>
+          <a href="#honors">荣誉资质</a>
+          <a href="#timeline">发展历程</a>
+          <a href="#contact">联系我们</a>
+        </nav>
+        <a class="sub-back" href="#top">返回顶部</a>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero-block">
+        <div class="hero-stage">
+          <div class="wrap hero-copy hero-copy-overlay">
+            <p class="kicker hero-kicker">Zhuhai Edgeless Integrated Circuit Co., Ltd.</p>
+            <h1>好芯片，格力造。</h1>
+            <p class="lead hero-lead">
+              面向智慧家庭、工业控制与高可靠场景，构建覆盖 AIoT SoC、MCU 与功率器件的芯片能力矩阵，
+              为消费电子、智能家居、工业自动化、健康医疗及能源控制等领域提供稳定的核心器件支持。
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#products">查看核心产品</a>
+              <a class="button button-secondary" href="#contact">商务联系</a>
+            </div>
+          </div>
+          <a class="hero-scroll" href="#intro" aria-label="向下了解零边界集成电路">向下了解</a>
+        </div>
+      </section>
+
+      <section class="section" id="intro">
+        <div class="wrap">
+          <div class="section-heading reveal">
+            <p class="kicker">Company Profile</p>
+            <h2>零边界集成电路</h2>
+          </div>
+          <div class="intro-grid">
+            <article class="card intro-card reveal">
+              <img class="intro-logo" src="edgelesslogo.png" alt="零边界集成电路">
+              <p>
+                2018 年创立珠海零边界集成电路有限公司，公司专注于智慧家庭（AIoT SoC）芯片、
+                MCU 芯片和功率器件的产品研发及销售。其中 MCU 芯片和智慧家庭（AIoT SoC）芯片产品
+                适用于家电、工业及医疗 HMI 等产品，可广泛应用于消费类电子、智能家居、工业自动化、
+                健康医疗配套、信息安全等领域。
+              </p>
+              <p>
+                功率器件产品适用于 PFC 电路、电机驱动、逆变电路、软开关电路等，可广泛应用于家用电器、
+                工业控制、光伏逆变等领域。截至 2025 年底，公司产品出货量超过 3.4 亿颗，
+                申请相关发明专利超过 600 篇。
+              </p>
+            </article>
+            <aside class="card intro-highlight reveal">
+              <h3>重点方向</h3>
+              <ul>
+                <li>智慧家庭 AIoT SoC 芯片平台</li>
+                <li>工业级与高可靠 MCU 芯片</li>
+                <li>功率半导体与模块化器件</li>
+                <li>消费电子到工业控制的跨场景落地</li>
+              </ul>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-dark" id="products">
+        <div class="wrap">
+          <div class="section-heading section-heading-light reveal">
+            <p class="kicker">Core Portfolio</p>
+            <h2>核心产品</h2>
+          </div>
+
+          <div class="product-columns">
+            <article class="product-module reveal">
+              <div class="module-head">
+                <span>01</span>
+                <h3>EAI 系列芯片</h3>
+              </div>
+              <ul class="product-list">
+                <li>EAI-100 智慧家庭中控 SoC</li>
+                <li>EAI-120 低功耗语控交互芯片</li>
+                <li>EAI-180 彩屏 HMI 控制芯片</li>
+                <li>EAI-210 家电互联边缘处理器</li>
+                <li>EAI-260 安全连接网关芯片</li>
+                <li>EAI-320 多协议 AIoT 主控芯片</li>
+                <li>EAI-360 触控显示一体化方案</li>
+              </ul>
+            </article>
+
+            <article class="product-module reveal">
+              <div class="module-head">
+                <span>02</span>
+                <h3>EM32 系列 MCU</h3>
+              </div>
+              <ul class="product-list">
+                <li>EM32F031 入门级 32 位 MCU</li>
+                <li>EM32L052 低功耗控制 MCU</li>
+                <li>EM32M103 电机驱动 MCU</li>
+                <li>EM32H207 高性能工业 MCU</li>
+                <li>EM32T315 触控人机交互 MCU</li>
+                <li>EM32S408 安全增强型 MCU</li>
+                <li>EM32M520 医疗 HMI 控制 MCU</li>
+              </ul>
+            </article>
+
+            <article class="product-module reveal">
+              <div class="module-head">
+                <span>03</span>
+                <h3>功率器件</h3>
+              </div>
+              <ul class="product-list">
+                <li>EPD650 Super Junction MOS</li>
+                <li>EPD820 高频低损耗 MOS</li>
+                <li>EIPM-15A 智能功率模块</li>
+                <li>EIPM-25A 家电驱动 IPM 模块</li>
+                <li>EGT40N 变频 IGBT 单管</li>
+                <li>EGM75 光伏逆变 IGBT 模块</li>
+                <li>ESR12 快恢复功率二极管</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="advantages">
+        <div class="wrap">
+          <div class="section-heading reveal">
+            <p class="kicker">Product Strengths</p>
+            <h2>产品优势</h2>
+          </div>
+          <div class="advantage-grid">
+            <article class="card advantage-card reveal">
+              <span class="advantage-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" role="img" focusable="false">
+                  <rect x="7" y="7" width="10" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+                  <path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"/>
+                  <path d="M10 10h4v4h-4z" fill="currentColor"/>
+                </svg>
+              </span>
+              <h3>丰富的产品</h3>
+              <p>
+                拥有工业级 32 位 MCU、低功耗 MCU、电机 MCU、智慧家庭（AIoT SoC）芯片、
+                功率半导体分立器件、IPM 智能功率模块及 IGBT 模块。
+              </p>
+            </article>
+            <article class="card advantage-card reveal">
+              <span class="advantage-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" role="img" focusable="false">
+                  <rect x="5" y="4" width="14" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/>
+                  <path d="M8 8h8M8 11h8M8 14h4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"/>
+                  <path d="M19 9h1.5A1.5 1.5 0 0 1 22 10.5v3A1.5 1.5 0 0 1 20.5 15H19" fill="none" stroke="currentColor" stroke-width="1.8"/>
+                </svg>
+              </span>
+              <h3>广泛的应用</h3>
+              <p>
+                芯片产品可应用于消费类电子、智能家居、工业自动化、健康医疗配套、信息安全等领域；
+                功率器件产品可应用于家用电器、工业控制、光伏逆变等领域。
+              </p>
+            </article>
+            <article class="card advantage-card reveal">
+              <span class="advantage-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" role="img" focusable="false">
+                  <path d="M12 3l7 3v5c0 4.6-2.8 7.8-7 10-4.2-2.2-7-5.4-7-10V6l7-3z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8"/>
+                  <path d="M9.5 12.2l1.7 1.7 3.8-4.1" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/>
+                </svg>
+              </span>
+              <h3>可靠的品质</h3>
+              <p>
+                拥有国家级重点实验室及有资质的权威第三方检测认证，达到同类进口芯片同等水平，
+                可满足复杂场景下的稳定运行需求。
+              </p>
+            </article>
+            <article class="card advantage-card reveal">
+              <span class="advantage-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" role="img" focusable="false">
+                  <path d="M3 7h11v8H3zM14 10h3.2l2.8 3V15H14z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8"/>
+                  <circle cx="8" cy="17" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+                  <circle cx="18" cy="17" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+                  <path d="M3 15h3M14 15h2" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"/>
+                </svg>
+              </span>
+              <h3>稳定的供应</h3>
+              <p>
+                供应高保障，拥有完备的全产业链备货体系，储备资源可提供长达十年的供货保障，
+                支持中长期项目稳定交付。
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft" id="honors">
+        <div class="wrap">
+          <div class="section-heading reveal">
+            <p class="kicker">Honors & Certifications</p>
+            <h2>荣誉资质</h2>
+          </div>
+          <div class="honor-timeline">
+            <article class="honor-year card reveal">
+              <div class="honor-year-tag">2021</div>
+              <div class="honor-year-body">
+                <ul class="honor-list">
+                  <li>科技型中小企业认证</li>
+                  <li>高新技术企业认证</li>
+                  <li>国家鼓励的重点集成电路设计企业认证</li>
+                  <li>ISO9001 质量管理体系认证</li>
+                  <li>第 16 届“中国芯”优秀市场表现产品: 工控类通用型 32 位微控制器 / GM6601</li>
+                  <li>珠海市创新产品: GM6621 超低功耗 MCU 芯片</li>
+                  <li>第 22 届中国专利优秀奖: 时钟电路稳定性的判别方法及装置（中国发明专利，专利号 ZL201611018859.0）</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="honor-year card reveal">
+              <div class="honor-year-tag">2022</div>
+              <div class="honor-year-body">
+                <ul class="honor-list">
+                  <li>中国质量协会质量技术奖</li>
+                  <li>创新型中小企业认定</li>
+                  <li>珠海市专精特新中小企业认证</li>
+                  <li>广东省专精特新中小企业认证</li>
+                  <li>科技型中小企业认证</li>
+                  <li>广东省名优高新技术产品: 家用变频空调 PFC IGBT 产品、变频空调用 IPM（智能功率模块）产品研发</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="honor-year card reveal">
+              <div class="honor-year-tag">2023</div>
+              <div class="honor-year-body">
+                <ul class="honor-list">
+                  <li>珠海市创新产品: 变频空调用 IPM（智能功率模块）产品</li>
+                  <li>广东省名优高新技术产品: GM672X 轻量级人工智能微控制器芯片</li>
+                  <li>广东省名优高新技术产品: 家用变频空调 SiC 二极管产品</li>
+                  <li>广东省名优高新技术产品: 外风机 DIP25 模块</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="honor-year card reveal">
+              <div class="honor-year-tag">2024</div>
+              <div class="honor-year-body">
+                <ul class="honor-list">
+                  <li>国家鼓励的重点集成电路设计企业认证</li>
+                  <li>高新技术企业认证</li>
+                  <li>广东省名优高新技术产品: Sensorless IPM（智能功率模块）</li>
+                  <li>广东省名优高新技术产品: 20A IPM（智能功率模块）产品项目</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="honor-year card reveal">
+              <div class="honor-year-tag">2025</div>
+              <div class="honor-year-body">
+                <ul class="honor-list">
+                  <li>国家鼓励的重点集成电路设计企业认证</li>
+                  <li>知识产权合规管理体系认证</li>
+                  <li>ASTC2025 芯片用量排行榜前五</li>
+                  <li>创新型中小企业</li>
+                  <li>广东省专精特新中小企业</li>
+                  <li>名优高新技术产品: SLIM IPM（智能功率模块）</li>
+                  <li>珠海市知识产权优势企业</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="timeline">
+        <div class="wrap">
+          <div class="section-heading reveal">
+            <p class="kicker">Development History</p>
+            <h2>零边界历程</h2>
+          </div>
+
+          <div class="history-board">
+            <article class="history-card history-card-top reveal">
+              <div class="history-card-inner">
+                <h3>2017</h3>
+                <ul>
+                  <li>第一代通用型工业互联微控制器研发</li>
+                  <li>第一代低功耗微控制器设计</li>
+                  <li>联合中车等合资成立功率半导体创新中心</li>
+                  <li>与 Sanken 合作研发 IGBT</li>
+                </ul>
+                <h3>2018</h3>
+                <ul>
+                  <li><strong>珠海零边界集成电路有限公司成立</strong></li>
+                  <li>第一代人工智能芯片研发</li>
+                  <li>家用空调内机应用规模量产</li>
+                  <li>推出分立器件 650V-FRD</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="history-card history-card-top reveal">
+              <div class="history-card-inner">
+                <h3>2021</h3>
+                <ul>
+                  <li>电子注册码芯片开发</li>
+                  <li>空调外机主控芯片设计</li>
+                  <li>第一代人工智能芯片规模量产</li>
+                  <li>推出 SJMOS 芯片</li>
+                  <li>推出 SiC JBS 二极管</li>
+                  <li>推出 1200V IGBT 功率模组</li>
+                </ul>
+                <h3>2022</h3>
+                <ul>
+                  <li>产品量产应用突破 1 亿颗</li>
+                  <li>第二代低功耗微控制器设计</li>
+                  <li>专用电机控制芯片研发</li>
+                  <li>推出 650V Sensorless IPM</li>
+                  <li>推出 650V IGBT 内绝缘产品</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="history-card history-card-top history-card-accent reveal">
+              <div class="history-card-inner">
+                <h3>2025</h3>
+                <ul>
+                  <li>产品量产应用突破 3 亿颗</li>
+                  <li>专用 HMI 芯片量产</li>
+                  <li>电机控制 ASIC 芯片研发</li>
+                  <li>HVIC 芯片研发</li>
+                  <li>持续拓展功率器件与控制芯片矩阵</li>
+                </ul>
+              </div>
+            </article>
+
+            <div class="history-rail reveal" aria-hidden="true">
+              <div class="history-rail-line"></div>
+              <div class="history-node history-node-start">
+                <span>2015, 2016</span>
+              </div>
+              <div class="history-node">
+                <span>2017, 2018</span>
+              </div>
+              <div class="history-node">
+                <span>2019, 2020</span>
+              </div>
+              <div class="history-node">
+                <span>2021, 2022</span>
+              </div>
+              <div class="history-node">
+                <span>2023, 2024</span>
+              </div>
+              <div class="history-node history-node-highlight">
+                <span>2025</span>
+              </div>
+            </div>
+
+            <article class="history-card history-card-bottom reveal">
+              <div class="history-card-inner">
+                <h3>2015</h3>
+                <ul>
+                  <li>格力电器通信技术研究院成立</li>
+                  <li>芯片、功率半导体研发团队启动</li>
+                </ul>
+                <h3>2016</h3>
+                <ul>
+                  <li>建立先进的芯片设计流程</li>
+                  <li>第一代通用型工控类微控制器诞生</li>
+                  <li>首次推出功率器件超薄 FS-IGBT</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="history-card history-card-bottom reveal">
+              <div class="history-card-inner">
+                <h3>2019</h3>
+                <ul>
+                  <li>RISC-V 处理器研发</li>
+                  <li>商用空调内机应用规模量产</li>
+                  <li>基于 RISC-V 的异构人工智能芯片研发</li>
+                  <li>推出分立器件 650V-IGBT</li>
+                </ul>
+                <h3>2020</h3>
+                <ul>
+                  <li>低功耗遥控器应用规模量产</li>
+                  <li>第二代通用型工控类 MCU 芯片研发</li>
+                  <li>推出及量产 IPM 智能模块 650V DIP-24L</li>
+                  <li>推出 IPM 智能模块 650V DIP-25L</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="history-card history-card-bottom reveal">
+              <div class="history-card-inner">
+                <h3>2023</h3>
+                <ul>
+                  <li>专用 HMI 控制芯片设计</li>
+                  <li>空调外机主控芯片量产</li>
+                  <li>智能节能芯片量产</li>
+                  <li>推出 650V SLIM-L IPM</li>
+                  <li>推出 1200V PIM 小型化模块</li>
+                  <li>推出 650V FRD 内绝缘产品</li>
+                  <li>推出 650V SiC 二极管内绝缘产品</li>
+                </ul>
+                <h3>2024</h3>
+                <ul>
+                  <li>产品量产应用突破 2 亿颗</li>
+                  <li>推出 650V/40A-50A 混合 IGBT 产品</li>
+                  <li>推出 650V/6A SLIM-S IPM 模块</li>
+                  <li>推出 1200V/35A PIM 模块</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contact-section" id="contact">
+        <div class="wrap contact-layout">
+          <div class="section-heading section-heading-light reveal">
+            <p class="kicker">Contact</p>
+            <h2>联系我们</h2>
+            <p>欢迎与珠海零边界集成电路有限公司进行市场咨询、合作交流与业务对接。</p>
+          </div>
+
+          <div class="contact-card reveal">
+            <div class="contact-line">
+              <span>公司名称</span>
+              <strong>珠海零边界集成电路有限公司</strong>
+            </div>
+            <div class="contact-line">
+              <span>市场咨询</span>
+              <a href="mailto:edgelessic@cn.gree.com">edgelessic@cn.gree.com</a>
+            </div>
+            <div class="contact-line">
+              <span>官方网址</span>
+              <a href="https://www.edgeless-tech.com" target="_blank" rel="noreferrer">www.edgeless-tech.com</a>
+            </div>
+            <div class="contact-line">
+              <span>公司地址</span>
+              <strong>珠海市香洲区大智路999号</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
