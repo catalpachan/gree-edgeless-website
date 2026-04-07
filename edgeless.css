@@ -1084,6 +1084,22 @@ h1 {
   align-items: start;
 }
 
+.contact-qr {
+  width: min(168px, 48vw);
+  margin-top: 22px;
+  padding: 12px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 18px 34px rgba(4, 16, 33, 0.18);
+}
+
+.contact-qr img {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+}
+
 .contact-card {
   padding: 18px;
   border-radius: var(--radius-xl);
@@ -1153,6 +1169,10 @@ h1 {
 
   .product-showcase-reverse .product-copy {
     order: 1;
+  }
+
+  .contact-qr {
+    width: min(180px, 42vw);
   }
 
   .advantage-grid {
@@ -1316,6 +1336,10 @@ h1 {
   .product-button {
     width: 100%;
     justify-content: center;
+  }
+
+  .contact-qr {
+    width: min(160px, 52vw);
   }
 
   .hero-block {
