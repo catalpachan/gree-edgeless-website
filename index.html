@@ -13,14 +13,76 @@
       history.scrollRestoration = "manual";
     }
 
-    window.addEventListener("pageshow", function () {
-      if (!window.location.hash) {
-        window.scrollTo(0, 0);
+    function isReloadNavigation() {
+      if (window.performance && typeof window.performance.getEntriesByType === "function") {
+        var entries = window.performance.getEntriesByType("navigation");
+        if (entries && entries.length) {
+          return entries[0].type === "reload";
+        }
       }
-    });
+
+      if (window.performance && window.performance.navigation) {
+        return window.performance.navigation.type === 1;
+      }
+
+      return false;
+    }
+
+    function resetScrollOnLoad() {
+      if (isReloadNavigation() && window.location.hash) {
+        history.replaceState(null, "", window.location.pathname + window.location.search);
+      }
+
+      if (isReloadNavigation() || !window.location.hash) {
+        window.scrollTo(0, 0);
+        window.requestAnimationFrame(function () {
+          window.scrollTo(0, 0);
+        });
+      }
+    }
+
+    window.addEventListener("pageshow", resetScrollOnLoad);
 
     document.addEventListener("DOMContentLoaded", function () {
+      resetScrollOnLoad();
+
       var items = document.querySelectorAll(".reveal");
+      var menuToggle = document.querySelector(".menu-toggle");
+      var mobileBackdrop = document.querySelector(".nav-backdrop");
+      var mobileLinks = document.querySelectorAll(".sub-nav a");
+
+      function closeMenu() {
+        document.body.classList.remove("menu-open");
+        if (menuToggle) {
+          menuToggle.setAttribute("aria-expanded", "false");
+        }
+      }
+
+      if (menuToggle && mobileBackdrop) {
+        menuToggle.addEventListener("click", function () {
+          var isOpen = document.body.classList.toggle("menu-open");
+          menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        });
+
+        mobileBackdrop.addEventListener("click", closeMenu);
+
+        mobileLinks.forEach(function (link) {
+          link.addEventListener("click", closeMenu);
+        });
+
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            closeMenu();
+          }
+        });
+
+        window.addEventListener("resize", function () {
+          if (window.innerWidth > 760) {
+            closeMenu();
+          }
+        });
+      }
+
       if (!items.length) {
         return;
       }
@@ -58,6 +120,11 @@
         <a class="sub-logo" href="#top" aria-label="返回页面顶部">
           <img src="tosot.png" alt="GREE">
         </a>
+        <button class="menu-toggle" type="button" aria-label="Open site navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
         <nav class="sub-nav" aria-label="页面导航">
           <a href="#intro">公司介绍</a>
           <a href="#products">核心产品</a>
@@ -65,9 +132,11 @@
           <a href="#honors">荣誉资质</a>
           <a href="#timeline">发展历程</a>
           <a href="#contact">联系我们</a>
+          <a class="sub-nav-cta" href="#top">TOP</a>
         </nav>
         <a class="sub-back" href="#top">返回顶部</a>
       </div>
+      <div class="nav-backdrop" aria-hidden="true"></div>
     </header>
 
     <main id="top">
@@ -110,19 +179,19 @@
                 申请相关发明专利超过 600 篇。
               </p>
             </article>
-            <aside class="card intro-highlight reveal">
-              <h3>重点方向</h3>
-              <ul>
-                <li>智慧家庭 AIoT SoC 芯片平台</li>
-                <li>工业级与高可靠 MCU 芯片</li>
-                <li>功率半导体与模块化器件</li>
-                <li>消费电子到工业控制的跨场景落地</li>
-              </ul>
-            </aside>
+            <div class="intro-card-pair">
+              <article class="card intro-card intro-metric-card reveal is-visible">
+                <span>截止 2025 年累计出货量</span>
+                <strong>3.4亿+</strong>
+              </article>
+              <article class="card intro-card intro-metric-card reveal is-visible">
+                <span>国家发明专利</span>
+                <strong>600+</strong>
+              </article>
+            </div>
           </div>
         </div>
       </section>
-
       <section class="section section-dark" id="products">
         <div class="wrap">
           <div class="section-heading section-heading-light reveal">
@@ -130,53 +199,59 @@
             <h2>核心产品</h2>
           </div>
 
-          <div class="product-columns">
-            <article class="product-module reveal">
-              <div class="module-head">
-                <span>01</span>
-                <h3>EAI 系列芯片</h3>
+          <div class="product-showcase-list">
+            <article class="product-showcase reveal">
+              <div class="product-copy">
+                <div class="module-head">
+                  <span>01</span>
+                  <div>
+                    <p class="product-eyebrow">AIoT SoC</p>
+                    <h3>EAI系列芯片</h3>
+                  </div>
+                </div>
+                <p class="product-summary">三核异构AI芯片，融合高性能AI算力及嵌入式MCU的低功耗和易用性的特性。</p>
+                <p class="product-description">自主研发的超轻量级物联网实时操作系统 E-RTOS，根据物联网硬件平台的差异性设计，具有高度可配置性和高度可移植性。相较于主流 RTOS，配置更灵活，功能更强，拥有丰富的使用手册，完全免费，用户可保持原有基础储备，无需培训即可直接上手。</p>
+                <a class="button button-secondary product-button" href="#contact">了解详情</a>
               </div>
-              <ul class="product-list">
-                <li>EAI-100 智慧家庭中控 SoC</li>
-                <li>EAI-120 低功耗语控交互芯片</li>
-                <li>EAI-180 彩屏 HMI 控制芯片</li>
-                <li>EAI-210 家电互联边缘处理器</li>
-                <li>EAI-260 安全连接网关芯片</li>
-                <li>EAI-320 多协议 AIoT 主控芯片</li>
-                <li>EAI-360 触控显示一体化方案</li>
-              </ul>
+              <figure class="product-visual product-visual-eai">
+                <img src="EAI.png" alt="EAI系列芯片产品图">
+              </figure>
             </article>
 
-            <article class="product-module reveal">
-              <div class="module-head">
-                <span>02</span>
-                <h3>EM32 系列 MCU</h3>
+            <article class="product-showcase product-showcase-reverse reveal">
+              <figure class="product-visual product-visual-em32">
+                <img src="EM32.png" alt="EM32系列MCU产品图">
+              </figure>
+              <div class="product-copy">
+                <div class="module-head">
+                  <span>02</span>
+                  <div>
+                    <p class="product-eyebrow">Industrial MCU</p>
+                    <h3>EM32系列MCU</h3>
+                  </div>
+                </div>
+                <p class="product-summary">EM32系列MCU产品拥有工规级品质，高性能、低能耗、高性价比的特点。</p>
+                <p class="product-description">EM32系列MCU产品包括32位工业级MCU、电机MCU和低功耗MCU，广泛应用于家用电器、消费类电子、健康医疗配套、工业智能化、FOC电机控制、信息安全等领域，提供从芯片到程序代码库、开发套件、设计方案等完整工具链。该系列多款MCU已获得包括格力电器在内的多家国际知名公司的认证和大批量使用。</p>
+                <a class="button button-secondary product-button" href="#contact">了解详情</a>
               </div>
-              <ul class="product-list">
-                <li>EM32F031 入门级 32 位 MCU</li>
-                <li>EM32L052 低功耗控制 MCU</li>
-                <li>EM32M103 电机驱动 MCU</li>
-                <li>EM32H207 高性能工业 MCU</li>
-                <li>EM32T315 触控人机交互 MCU</li>
-                <li>EM32S408 安全增强型 MCU</li>
-                <li>EM32M520 医疗 HMI 控制 MCU</li>
-              </ul>
             </article>
 
-            <article class="product-module reveal">
-              <div class="module-head">
-                <span>03</span>
-                <h3>功率器件</h3>
+            <article class="product-showcase reveal">
+              <div class="product-copy">
+                <div class="module-head">
+                  <span>03</span>
+                  <div>
+                    <p class="product-eyebrow">Power Device</p>
+                    <h3>EP系列功率器件</h3>
+                  </div>
+                </div>
+                <p class="product-summary">EP系列功率器件产品包括分立器件(FRD、SiC二极管、IGBT)、IPM智能功率模块和IGBT模块，覆盖650V和1200V电压平台。</p>
+                <p class="product-description">适用于PFC电路、电机驱动、逆变电路、感应加热、软开关电路等，应用于家用电器、工业控制、光伏逆变等领域。</p>
+                <a class="button button-secondary product-button" href="#contact">了解详情</a>
               </div>
-              <ul class="product-list">
-                <li>EPD650 Super Junction MOS</li>
-                <li>EPD820 高频低损耗 MOS</li>
-                <li>EIPM-15A 智能功率模块</li>
-                <li>EIPM-25A 家电驱动 IPM 模块</li>
-                <li>EGT40N 变频 IGBT 单管</li>
-                <li>EGM75 光伏逆变 IGBT 模块</li>
-                <li>ESR12 快恢复功率二极管</li>
-              </ul>
+              <figure class="product-visual product-visual-ep">
+                <img src="EP.png" alt="EP系列功率器件产品图">
+              </figure>
             </article>
           </div>
         </div>
