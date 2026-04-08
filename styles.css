@@ -10,6 +10,7 @@
   --accent: #7dc1ff;
   --dark: #0c1622;
   --shadow: 0 20px 60px rgba(7, 27, 60, 0.12);
+  --heading-font: "PingFang SC", "PingFang TC", "HarmonyOS Sans SC", "Microsoft YaHei", sans-serif;
   --radius-xl: 32px;
   --radius-lg: 24px;
   --radius-md: 18px;
@@ -214,7 +215,7 @@ a {
 .about-copy h2,
 .site-footer h2 {
   margin: 0;
-  font-family: "Source Han Serif SC", "Songti SC", "STSong", serif;
+  font-family: var(--heading-font);
   font-weight: 700;
   letter-spacing: 0.02em;
 }

@@ -10,6 +10,7 @@
   --accent: #7dc1ff;
   --shadow: 0 20px 60px rgba(7, 27, 60, 0.12);
   --wrap: min(1180px, calc(100vw - 40px));
+  --heading-font: "PingFang SC", "PingFang TC", "HarmonyOS Sans SC", "Microsoft YaHei", sans-serif;
   --radius-xl: 32px;
   --radius-lg: 24px;
   --radius-md: 18px;
@@ -315,7 +316,7 @@ body.menu-open .menu-toggle span:nth-child(3) {
 h1,
 h2 {
   margin: 0;
-  font-family: "Source Han Serif SC", "Songti SC", "STSong", serif;
+  font-family: var(--heading-font);
   font-weight: 700;
   letter-spacing: 0.02em;
 }
