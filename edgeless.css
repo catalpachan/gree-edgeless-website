@@ -11,9 +11,9 @@
   --shadow: 0 20px 60px rgba(7, 27, 60, 0.12);
   --wrap: min(1180px, calc(100vw - 40px));
   --heading-font: "PingFang SC", "PingFang TC", "HarmonyOS Sans SC", "Microsoft YaHei", sans-serif;
-  --radius-xl: 32px;
-  --radius-lg: 24px;
-  --radius-md: 18px;
+  --radius-xl: 0;
+  --radius-lg: 0;
+  --radius-md: 0;
 }
 
 *,
@@ -100,7 +100,7 @@ a {
   height: 46px;
   padding: 0;
   border: 1px solid rgba(10, 89, 199, 0.14);
-  border-radius: 14px;
+  border-radius: 0;
   background: rgba(255, 255, 255, 0.72);
   box-shadow: 0 8px 22px rgba(9, 31, 66, 0.08);
   cursor: pointer;
@@ -111,7 +111,7 @@ a {
   left: 50%;
   width: 18px;
   height: 2px;
-  border-radius: 999px;
+  border-radius: 0;
   background: #163456;
   transform: translateX(-50%);
   transition:
@@ -218,7 +218,7 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 999px;
+  border-radius: 0;
   font-weight: 700;
   transition:
     transform 0.2s ease,
@@ -588,7 +588,7 @@ h1 {
   gap: clamp(24px, 4vw, 48px);
   padding: clamp(26px, 3.4vw, 36px);
   border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 30px;
+  border-radius: 0;
   overflow: hidden;
   background:
     linear-gradient(125deg, rgba(255, 255, 255, 0.08), rgba(8, 25, 48, 0.68)),
@@ -675,7 +675,7 @@ h1 {
   justify-content: center;
   min-height: 320px;
   padding: 18px;
-  border-radius: 24px;
+  border-radius: 0;
   background:
     radial-gradient(circle at center, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.02) 48%, transparent 70%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.01));
@@ -685,7 +685,7 @@ h1 {
   content: "";
   position: absolute;
   inset: 14% 10%;
-  border-radius: 50%;
+  border-radius: 0;
   background: radial-gradient(circle, rgba(255, 255, 255, 0.34), rgba(125, 193, 255, 0.08) 46%, transparent 68%);
   filter: blur(18px);
   opacity: 0.88;
@@ -755,7 +755,7 @@ h1 {
   justify-content: center;
   width: 42px;
   height: 42px;
-  border-radius: 14px;
+  border-radius: 0;
   background: rgba(10, 89, 199, 0.12);
   color: var(--brand);
   font-weight: 800;
@@ -782,7 +782,7 @@ h1 {
   justify-content: center;
   width: 42px;
   height: 42px;
-  border-radius: 14px;
+  border-radius: 0;
   margin-bottom: 18px;
   background: rgba(10, 89, 199, 0.12);
   color: var(--brand);
@@ -812,7 +812,7 @@ h1 {
   justify-content: center;
   min-height: 38px;
   padding: 0 14px;
-  border-radius: 999px;
+  border-radius: 0;
   color: #fff;
   font-size: 1.02rem;
   font-weight: 800;
@@ -861,7 +861,7 @@ h1 {
   position: relative;
   z-index: 1;
   min-height: 236px;
-  border-radius: 24px;
+  border-radius: 0;
   border: 1px solid rgba(23, 56, 103, 0.22);
   background: rgba(255, 255, 255, 0.92);
   box-shadow: 0 18px 34px rgba(7, 27, 60, 0.09);
@@ -945,7 +945,7 @@ h1 {
   z-index: 0;
   min-height: 118px;
   margin-top: 0;
-  border-radius: 22px;
+  border-radius: 0;
   background:
     linear-gradient(180deg, rgba(11, 79, 178, 0.96), rgba(31, 95, 190, 0.95)),
     linear-gradient(90deg, rgba(255, 255, 255, 0.08), transparent);
@@ -1005,7 +1005,7 @@ h1 {
   width: 14px;
   height: 14px;
   margin: 0 auto 12px;
-  border-radius: 50%;
+  border-radius: 0;
   border: 2px solid rgba(255, 255, 255, 0.78);
   background: #2f67c2;
   box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.06);
@@ -1087,9 +1087,8 @@ h1 {
 
 .contact-qr {
   width: min(168px, 48vw);
-  margin-top: 22px;
   padding: 12px;
-  border-radius: 22px;
+  border-radius: 0;
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.14);
   box-shadow: 0 18px 34px rgba(4, 16, 33, 0.18);
@@ -1098,14 +1097,26 @@ h1 {
 .contact-qr img {
   width: 100%;
   height: auto;
-  border-radius: 14px;
+  border-radius: 0;
 }
 
 .contact-card {
   padding: 18px;
+  border: 0;
   border-radius: var(--radius-xl);
   background: rgba(255, 255, 255, 0.08);
   border-color: rgba(255, 255, 255, 0.14);
+}
+
+.contact-card-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 24px;
+  align-items: center;
+}
+
+.contact-lines {
+  min-width: 0;
 }
 
 .contact-line {
@@ -1157,6 +1168,14 @@ h1 {
   .intro-grid,
   .contact-layout {
     grid-template-columns: 1fr;
+  }
+
+  .contact-card-body {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-qr {
+    margin: 8px auto 0;
   }
 
   .product-showcase {
@@ -1278,7 +1297,7 @@ h1 {
     align-items: center;
     min-height: 52px;
     padding: 0 16px;
-    border-radius: 16px;
+    border-radius: 0;
     background: rgba(255, 255, 255, 0.78);
     border: 1px solid rgba(10, 89, 199, 0.1);
     box-shadow: 0 8px 18px rgba(9, 31, 66, 0.06);
@@ -1417,7 +1436,7 @@ h1 {
   }
 
   .history-board {
-    border-radius: 24px;
+    border-radius: 0;
     padding: 18px;
   }
 
